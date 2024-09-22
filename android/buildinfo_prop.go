@@ -144,6 +144,12 @@ func (p *buildinfoPropModule) GenerateAndroidBuildActions(ctx ModuleContext) {
 		cmd.Flag("--display-build-number")
 	}
 
+	cmd.FlagWithArg("--atomx-device=", config.AtomXDevice())
+	cmd.FlagWithArg("--atomx-display-version=", config.AtomXDisplayVersion())
+	cmd.FlagWithArg("--atomx-major-version=", config.AtomXMajorVersion())
+	cmd.FlagWithArg("--atomx-minor-version=", config.AtomXMinorVersion())
+	cmd.FlagWithArg("--atomx-build-variant=", config.AtomXBuildVariant())
+
 	cmd.FlagWithArg("--platform-base-os=", config.PlatformBaseOS())
 	cmd.FlagWithArg("--platform-display-version=", config.PlatformDisplayVersionName())
 	cmd.FlagWithArg("--platform-min-supported-target-sdk-version=", config.PlatformMinSupportedTargetSdkVersion())

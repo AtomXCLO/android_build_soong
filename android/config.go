@@ -784,6 +784,26 @@ func (c *config) DisplayBuildNumber() bool {
 	return Bool(c.productVariables.DisplayBuildNumber)
 }
 
+func (c *config) AtomXDevice() string {
+	return String(c.productVariables.AtomXDevice)
+}
+
+func (c *config) AtomXDisplayVersion() string {
+	return fmt.Sprintf("%q", String(c.productVariables.AtomXDisplayVersion))
+}
+
+func (c *config) AtomXMajorVersion() string {
+	return String(c.productVariables.AtomXMajorVersion)
+}
+
+func (c *config) AtomXMinorVersion() string {
+	return String(c.productVariables.AtomXMinorVersion)
+}
+
+func (c *config) AtomXBuildVariant() string {
+	return String(c.productVariables.AtomXBuildVariant)
+}
+
 // BuildNumberFile returns the path to a text file containing metadata
 // representing the current build's number.
 //

@@ -233,6 +233,12 @@ type ProductVariables struct {
 	BuildThumbprintFile *string `json:",omitempty"`
 	DisplayBuildNumber  *bool   `json:",omitempty"`
 
+	AtomXDevice         *string `json:",omitempty"`
+	AtomXDisplayVersion *string `json:",omitempty"`
+	AtomXMajorVersion   *string `json:",omitempty"`
+	AtomXMinorVersion   *string `json:",omitempty"`
+	AtomXBuildVariant   *string `json:",omitempty"`
+
 	Platform_display_version_name          *string  `json:",omitempty"`
 	Platform_version_name                  *string  `json:",omitempty"`
 	Platform_sdk_version                   *int     `json:",omitempty"`

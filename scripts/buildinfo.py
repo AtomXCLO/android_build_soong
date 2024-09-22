@@ -54,6 +54,11 @@ def parse_args():
   parser.add_argument('--platform-version-known-codenames', required=True)
   parser.add_argument('--platform-version-last-stable', required=True)
   parser.add_argument('--product', required=True)
+  parser.add_argument('--atomx-device', required=True)
+  parser.add_argument('--atomx-display-version', required=True)
+  parser.add_argument('--atomx-major-version', required=True)
+  parser.add_argument('--atomx-minor-version', required=True)
+  parser.add_argument('--atomx-build-variant', required=True)
 
   parser.add_argument('--out', required=True, type=argparse.FileType('w'))
 
@@ -149,6 +154,17 @@ def main():
     if option.build_thumbprint_file:
       build_thumbprint = option.build_thumbprint_file.read().strip()
       print(f"ro.build.thumbprint={build_thumbprint}")
+
+    if option.atomx_device:
+      print(f"ro.atomx.device={option.atomx_device}")
+    if option.atomx_display_version:
+      print(f"ro.atomx.version={option.atomx_display_version}")
+    if option.atomx_major_version:
+      print(f"ro.atomx.version.major={option.atomx_major_version}")
+    if option.atomx_minor_version:
+      print(f"ro.atomx.version.minor={option.atomx_minor_version}")
+    if option.atomx_build_variant:
+      print(f"ro.atomx.build.variant={option.atomx_build_variant}")
 
     print(f"# end build properties")
 
